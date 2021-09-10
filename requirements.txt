@@ -1,3 +1,4 @@
-discord.py
-requests
+hikari[speedups]
+hikari-lightbulb
 python-dotenv
+uvloop

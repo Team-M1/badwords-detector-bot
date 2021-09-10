@@ -1,10 +1,12 @@
-FROM gorialis/discord.py:minimal
+FROM python:3.9-slim
+
+RUN apt update && apt install -y gcc
 
 WORKDIR /app
 
-COPY requirments.txt .
-RUN pip install --no-cache-dir -r requirments.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "main.py"]
+CMD ["python", "-OO", "main.py"]

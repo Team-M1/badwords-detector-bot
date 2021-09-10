@@ -1,25 +1,11 @@
 import os
-import asyncio
-import requests
-import discord
 
-from config import Config
+from client import bot
 
-client = discord.Client()
+# os가 windows가 아니면 uvloop를 사용
+if os.name != "nt":
+    import uvloop
 
-@client.event
-async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
+    uvloop.install()
 
-@client.event
-async def on_message(message):
-    if message.author.id == client.user.id:
-        return
-    url = os.path.join(Config.API_URL, 'text', message.content)
-    response = requests.get(url)
-    await message.channel.send(response.text)
-
-client.run(Config.TOKEN)
+bot.run()
