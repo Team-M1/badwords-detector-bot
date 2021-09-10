@@ -1,5 +1,4 @@
 import re
-from urllib.parse import quote
 
 import aiohttp
 import hikari
@@ -18,8 +17,8 @@ pattern = re.compile(r"[ㄱ-ㅣ가-힣]")
 async def predict_label(text: str) -> int:
     "입력으로 들어온 text의 레이블을 예측해서 반환합니다."
 
-    url = f"{apiurl}/predict/{quote(text)}"
-    async with session.get(url) as resp:
+    url = f"{apiurl}/predict"
+    async with session.post(url, json={"text": text}) as resp:
         resp_dict = await resp.json()
     label = resp_dict["label"]
     return label
