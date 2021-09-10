@@ -16,7 +16,7 @@ pattern = re.compile(r"[ㄱ-ㅣ가-힣]")
 
 
 async def predict_label(text: str) -> int:
-    """입력으로 들어온 text의 레이블을 예측해서 반환합니다."""
+    "입력으로 들어온 text의 레이블을 예측해서 반환합니다."
 
     url = f"{apiurl}/predict/{quote(text)}"
     async with session.get(url) as resp:
@@ -41,9 +41,7 @@ async def on_stop(event: hikari.StoppingEvent) -> None:
 
 
 async def message_filter(event) -> None:
-    """
-    입력으로 들어온 메세지를 검열하는 기능
-    """
+    "입력으로 들어온 메세지를 검열하는 기능"
 
     # GuildMessageCreateEvent, GuildMessageUpdateEvent 두 가지 이벤트에
     # 대응하기 위해 @bot.listen을 붙이지 않고, 아래쪽에

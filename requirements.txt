@@ -1,4 +1,5 @@
+aiohttp
 hikari[speedups]
 hikari-lightbulb
 python-dotenv
-uvloop
+uvloop; sys_platform != 'nt'
