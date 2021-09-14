@@ -1,0 +1,22 @@
+{
+    "name": "나쁜말 요정",
+    "description": "kmca API와 연계하여 디스코드 채팅에서 악플을 검열하는 디스코드 봇입니다.",
+    "repository": "https://github.com/Team-M1/badwords-detector-bot",
+    "keywords": [
+        "python",
+        "discord",
+        "hikari"
+    ],
+    "env": {
+        "TOKEN": {
+            "description": "디스코드 봇의 토큰입니다."
+        },
+        "API_URL": {
+            "description": "디스코드 봇이 사용할 API의 루트 주소입니다."
+        },
+        "CLIENT_ID": {
+            "description": "디스코드 봇의 클라이언트 ID입니다. 초대링크를 생성할 때에만 사용됩니다.",
+            "required": false
+        },
+    }
+}
