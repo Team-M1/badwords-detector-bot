@@ -17,6 +17,6 @@
         "CLIENT_ID": {
             "description": "디스코드 봇의 클라이언트 ID입니다. 초대링크를 생성할 때에만 사용됩니다.",
             "required": false
-        },
+        }
     }
 }
