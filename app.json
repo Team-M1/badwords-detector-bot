@@ -2,6 +2,7 @@
     "name": "나쁜말 요정",
     "description": "kmca API와 연계하여 디스코드 채팅에서 악플을 검열하는 디스코드 봇입니다.",
     "repository": "https://github.com/Team-M1/badwords-detector-bot",
+    "logo": "https://imgur.com/b5mqgRc",
     "keywords": [
         "python",
         "discord",
