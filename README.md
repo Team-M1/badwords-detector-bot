@@ -26,6 +26,28 @@ docker run -d \
 
 `CLIENT_ID`: (옵션) 디스코드 봇 클라이언트 ID입니다. 봇 초대링크를 생성할 때에만 사용됩니다.
 
+#### docker-compose
+
+docker-compose로 api와 봇을 동시에 서비스 할 수 있습니다.
+
+```yaml
+version: "3"
+
+services:
+  api:
+    image: ks2515/kmca
+
+  bot:
+    depends_on:
+      - api
+    image: ks2515/badwords-detector-bot
+    environment:
+      - API_URL=http://api
+    env_file:
+      - .env
+```
+
+간단한 예는 위와 같습니다. 이 예에서 TOKEN과 CLIENT_ID 환경변수는 `.env`파일 안에 있게 됩니다. `environment`에 직접 작성해도 무방합니다.
 
 
 #### 2. heroku
