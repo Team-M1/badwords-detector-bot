@@ -2,4 +2,4 @@ aiohttp
 hikari[speedups]
 hikari-lightbulb
 python-dotenv
-uvloop; sys_platform != 'nt'
+uvloop; sys_platform != 'win32'
